@@ -1,8 +1,5 @@
 import * as $ from 'jquery';
-import galleria from 'galleria';
+import * as Galleria from 'galleria'
+import 'imports-loader?define=>false!./node_modules/galleria/src/themes/classic/galleria.classic';
 
-window.Galleria = galleria;
-window.jQuery = $;
-
-Galleria.loadTheme('assets/galleria.classic.js');
 Galleria.run('.galleria');

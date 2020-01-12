@@ -12,10 +12,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /galleria.js$/,
-                loader: "imports-loader?this=>window"
-            },
-            {
                 test: /\.css$/,
                 use: [
                     'style-loader',
@@ -23,7 +19,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(gif)$/,
+                test: /\.(gif|png)$/,
                 use: 'file-loader'
             }
         ]
@@ -33,7 +29,6 @@ module.exports = {
             template: path.resolve(__dirname, 'index.html')
         }),
         new CopyWebpackPlugin([
-            { from: 'node_modules/galleria/dist/themes/classic/galleria.classic.min.js', to: 'assets/galleria.classic.js' },
             { from: 'node_modules/galleria/dist/themes/classic/galleria.classic.min.css', to: 'assets/galleria.classic.css' },
         ])
     ]
